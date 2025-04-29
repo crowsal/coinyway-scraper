@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: coinyway-scraper
+    env: docker
+    plan: free
+    dockerfilePath: Dockerfile
+    branch: main
+    buildCommand: ""
+    startCommand: ""
+    healthCheckPath: /
+    ports:
+      - port: 10000
+        protocol: http
