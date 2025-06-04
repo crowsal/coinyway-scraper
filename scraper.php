@@ -5,6 +5,7 @@ $horseName = isset($_GET['q']) ? trim($_GET['q']) : '';
 
 if ($horseName === '') {
     http_response_code(400);
+    header('Content-Type: application/json; charset=utf-8');
     echo json_encode(['error' => 'At ismi girilmedi.']);
     exit;
 }
@@ -23,6 +24,7 @@ curl_close($ch);
 
 if ($response === false) {
     http_response_code(500);
+    header('Content-Type: application/json; charset=utf-8');
     echo json_encode(['error' => 'Veri çekilemedi: ' . $error]);
     exit;
 }
